@@ -79,14 +79,11 @@ const App = () => {
   };
 
   const handleVehicleSelection = () => {
-    console.log("result calculation :;;;;; ; ");
-    console.log(vehicles, cops, selectedCities, fugitiveLocation);
     const copId = Object.values(selectedCities).findIndex(
       (e) => e[0] === fugitiveLocation.name
     );
     setCapturingCopIndex(copId)
-    console.log(copId);
-    if (copId !== -1 && cops.vehicle !== "") {
+    if (copId !== -1 && cops[copId].vehicle !== "") {
       setCaptureStatus(true);
     }
 
@@ -102,7 +99,7 @@ const App = () => {
   const resetGame = () => {
     setCaptureStatus(false);
     setCapturingCopIndex(null);
-    setCurrentPage("landing");
+    // setCurrentPage("landing");
     setSelectedCities({});
     window.location.reload();
   };

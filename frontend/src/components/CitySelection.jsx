@@ -11,9 +11,6 @@ const CitySelectionComponent = ({
   const [selectedCities, setSelectedCities] = useState(
     Object.values(selectedCity)
   );
-  console.log(selectedCity)
-
-
 
   const handleNextClick = () => {
     onNextButtonClick();
@@ -27,16 +24,12 @@ const CitySelectionComponent = ({
     });
     handleCityChange(copIndex + 1, selectedCity.split(","));
   };
-
   return (
     <div className={styles["vehicle-selection-container"]}>
       <h2>City Selection</h2>
       <ul className={styles["vehicle-list"]}>
         {cops.map((cop, index) => (
-          <li
-            key={`${cop.id}-${index}`}
-            className={styles["vehicle-item"]}
-          >
+          <li key={`${cop.id}-${index}`} className={styles["vehicle-item"]}>
             <h3>{cop.name}</h3>
             <select
               className={styles["select-dropdown"]}
@@ -47,10 +40,8 @@ const CitySelectionComponent = ({
                 <option
                   key={city.name}
                   value={[city.name, city.distance]}
-                  disabled={selectedCities.some(
-                    (selectedCity) =>
-                      selectedCity[0] === city.name && selectedCity[1] !== index
-                  )}
+                  disabled= {selectedCities && selectedCities.map(e=>e && e[0]).includes(city.name)}
+                  
                 >
                   {city.name} (Distance: {city.distance} KM)
                 </option>
@@ -59,7 +50,13 @@ const CitySelectionComponent = ({
           </li>
         ))}
       </ul>
-      <button className={styles["next-button"]} onClick={handleNextClick}>
+      <button
+        className={styles["next-button"]}
+        onClick={handleNextClick}
+        disabled={
+          selectedCities.filter((e) => e && e.length > 0).length !== cops.length
+        }
+      >
         Next
       </button>
     </div>
