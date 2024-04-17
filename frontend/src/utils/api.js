@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:5000'; // backend port 
+const baseURL = 'https://catch-the-criminal-backend.onrender.com/'; // backend port 
 
 export const fetchCities = async () => {
   try {
