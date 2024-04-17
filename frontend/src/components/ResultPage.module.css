@@ -1,0 +1,60 @@
+.result-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.result-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.captured-info {
+  margin-top: 20px;
+}
+
+.captured-info p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.reset-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.reset-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  .result-container {
+    padding: 10px;
+  }
+  
+  .result-heading {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .captured-info p {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .reset-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
