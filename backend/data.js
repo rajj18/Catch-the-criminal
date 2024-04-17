@@ -15,6 +15,5 @@ let cities = [
   ];
   
   let fugitiveLocation = cities[Math.floor(Math.random() * cities.length)];
-  console.log(fugitiveLocation)
   module.exports = { cities, vehicles, fugitiveLocation };
   

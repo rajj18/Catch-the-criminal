@@ -99,9 +99,8 @@ const App = () => {
   const resetGame = () => {
     setCaptureStatus(false);
     setCapturingCopIndex(null);
-    // setCurrentPage("landing");
+    setCurrentPage("landing");
     setSelectedCities({});
-    window.location.reload();
   };
 
   let pageContent;
