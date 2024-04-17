@@ -101,6 +101,7 @@ const App = () => {
     setCapturingCopIndex(null);
     setCurrentPage("landing");
     setSelectedCities({});
+    window.location.reload();
   };
 
   let pageContent;
